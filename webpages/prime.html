@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="notPrime">Not Prime</p>
+    <p id="prime" style="inline-size: 800px; overflow-wrap: break-word;">Prime</p>
+    <p id="final">Final</p>
+    <button type="button" onclick="findPrime()">Click Me</button>
+
+
+    <script>
+        const findPrime = () => {
+            const prime = []
+            const primeDivisors = [2, 3, 5, 7]
+            const num = 1000
+            let primeDivIterator = 0
+            let sum = 0
+
+            for (i = 2; prime.length < num; i++) {
+                for (j = 0; j <= primeDivisors.length; j++) {
+                    if (i === primeDivisors[j]) {
+                        prime.push(i);
+                        console.log(i);
+                        break;
+                    } else if (j >= 0) {
+                        if (i % primeDivisors[j] === 0) {
+                            break;
+                        } else if (j === primeDivisors.length) {
+                            prime.push(i);
+                            console.log(i);
+                        }
+                    }
+                } if (prime.length > 4) {
+                    primeDivIterator = (prime.length - 1);
+                    primeDivisors.push(prime[primeDivIterator]);
+                }
+                if (primeDivisors[primeDivisors.length - 1] === primeDivisors[primeDivisors.length - 2]) {
+                    primeDivisors.pop()
+                }
+            }
+            document.getElementById("prime").innerHTML = prime;
+            for (i = 0; i < prime.length; i++) {
+                sum += prime[i];
+            }
+            // return sum;
+            document.getElementById("final").innerHTML = sum;
+        }
+
+        // const primeSum = () => {
+        //     findPrime();
+        //     let sum = 0
+        //     for (i = 0; i < prime.length; i++) {
+        //         sum += prime[i];
+        //     }
+        //     return sum;
+        //     document.getElementById("final").innerHTML = sum;
+        // }
+        // console.log(prime);
+        // console.log(`Sum of the first ${num} primes: ${primeSum()}`);
+    </script>
+</body>
+
+</html>

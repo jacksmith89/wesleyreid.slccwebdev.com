@@ -1,0 +1,235 @@
+body {
+  font-family: Merriweather;
+  background: center/cover url(../assets/images/night-sky.jpg);
+  background-attachment: fixed;
+}
+
+nav {
+  border-radius: 10px 50px;
+  border: solid 5px rgb(80, 80, 80);
+  background-color: rgb(30, 30, 30);
+  height: 97%;
+  width: 9em;
+  position: fixed;
+  z-index: 1;
+  font-family: Lato;
+  font-variant: small-caps;
+  font-size: 1.5rem;
+  overflow-y: auto;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 15px;
+}
+
+nav a::link {
+  text-decoration: none;
+  color: lightgray;
+}
+
+nav a:visited {
+  color: plum;
+}
+
+nav a:hover {
+  background-color: black;
+  padding: 0 10px 5px;
+  transform: translate(5px, 0);
+  display: inline-block;
+  border-radius: 50%;
+}
+
+nav a:active {
+  color: red;
+}
+
+nav button {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1em;
+  border-radius: .5em;
+  border: none;
+  background-color: lightpink;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(240, 240, 255, 1);
+  transition: all .25s;
+}
+
+a:hover {
+  text-decoration: none;
+  color: lightskyblue;
+}
+
+.outside-box {
+  margin-left: 13.25em;
+  min-width: 300px;
+}
+
+.inner-box {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header div {
+  margin: 0 0 75px;
+  background-color: rgba(240, 240, 255, .25);
+  border-radius: 10px;
+  padding: 5px 10px;
+  box-shadow: rgba(0, 0, 0, 1) 0px 3px 10px, rgba(0, 0, 0, 1) 0px 5px 10px, rgba(0, 0, 0, 1) 0px 5px 10px;
+  align-items: center;
+  transition: background-color .25s;
+}
+
+header img {
+  margin-top: 10px;
+  height: 12em;
+  /* outline: solid;
+  outline-width: 5px;
+  outline-color: midnightblue; */
+  border: solid;
+  border-width: 5px;
+  border-color: white;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+header h1 {
+  letter-spacing: 0.2em;
+  color: rgba(240, 240, 255, 1);
+  font-size: 2em;
+  display: inline-block;
+  position: relative;
+  top: -5rem;
+  left: .5rem;
+}
+
+h1,
+h2 {
+  font-family: Lato;
+  font-variant: small-caps;
+}
+
+section {
+  background-color: rgba(240, 240, 255, 1);
+  border-radius: 10px;
+  margin: 50px auto;
+  padding: 5px 10px;
+  box-shadow: rgba(0, 0, 0, 1) 0px 3px 10px, rgba(0, 0, 0, 1) 0px 5px 10px;
+  transition: box-shadow .25s, transform .25s;
+}
+
+section:hover {
+  box-shadow: rgba(0, 0, 0, 1) 5px 8px 10px, rgba(0, 0, 0, 1) 0px 3px 10px, rgba(0, 0, 0, 1) 5px 8px 10px, rgba(0, 0, 0, 1) 0px 3px 10px, rgba(0, 0, 0, 1) 5px 8px 10px, rgba(0, 0, 0, 1) 5px 8px 10px;
+  transform: translate(-5px, -5px);
+}
+
+section h2 {
+  background-color: rgb(30, 135, 175);
+  width: 20%;
+  min-width: 12em;
+  margin-left: -5px;
+  padding-left: 5px;
+  border: solid;
+  border-radius: 10px;
+}
+
+section li {
+  list-style: none;
+  margin: 0em 1em .5em -1em;
+}
+
+/* p.indent {
+  margin: .5em 2em;
+} */
+
+/* For Portfolio page? */
+.banner {
+  display: inline-block;
+  width: 14em;
+  height: auto;
+  margin: 15px;
+  background-color: rgba(240, 240, 255, .25);
+  border-radius: 10px;
+  padding: 5px 10px 5px 5px;
+  box-shadow: rgba(0, 0, 0, 1) 0px 3px 10px, rgba(0, 0, 0, 1) 0px 5px 10px, rgba(0, 0, 0, 1) 0px 5px 10px;
+  transition: background-color .5s;
+}
+
+.banner:hover {
+  background-color: rgba(0, 0, 0, .75);
+}
+
+.banner img {
+  margin: 15px auto;
+  height: 9em;
+  outline: solid;
+  outline-width: 5px;
+  outline-color: midnightblue;
+  border: solid;
+  border-width: 5px;
+  border-color: white;
+  border-radius: 50%;
+  display: block;
+}
+
+.banner h2 {
+  text-align: center;
+  font-size: 1.25em;
+}
+
+.game-button {
+  display: block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Lato';
+  font-weight: 300;
+  color: #FFFFFF;
+  background-color: #4eb5f1;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.game-button:hover {
+  background-color: #4095c6;
+}
+
+.big-first-word {
+  font-size: 24px;
+  font-weight: 700;
+  font-variant: small-caps;
+}
+
+thead {
+  background-color: rgb(30, 135, 175);
+}
+
+th {
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+td {
+  width: 25%;
+  min-width: min-content;
+  /* border: 1px solid #ccc; */
+  padding: 5px;
+  min-width: 150px;
+  /* border-width border-style border-color */
+  text-align: center;
+}
+
+.secret-footer {
+  /* position: fixed; */
+  /* right: 10%; */
+  bottom: 0;
+  /* width: 5%; */
+  color: rgba(255, 0, 0, 0);
+  text-align: right;
+}

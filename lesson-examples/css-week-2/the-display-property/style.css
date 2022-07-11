@@ -1,0 +1,34 @@
+/*Follow the instructions in the comments below to complete this practice*/
+.inline {
+    /*1. Add the display property and set the value to "inline".*/
+    display: inline;
+    /*2. Add the background color property and set the value to "lightpink".*/
+    background-color: lightpink;
+}
+
+.inline-block {
+    /*1. Add the display property and set the value to "inline-block".*/
+    display: inline-block;
+    /*2. Add the background color property and set the value to "lightpink".*/
+    background-color: lightpink;
+}
+
+.block {
+    /*1. Add the display property and set the value to "block".*/
+    display: block;
+    /*2. Add the background color property and set the value to "lightpink".*/
+    background-color: lightpink;
+}
+
+.custom {
+    /*1. Add the display property and set the value to one of your choosing.*/
+    display: inline;
+    /*2. Add the background color property and set the value to one of your choosing.*/
+    background-color: aliceblue;
+}
+
+/*Create a CSS rule that selects all the <div> elements.*/
+div {
+    /*1. Add the margin left property and set the value to "20px" to indent the elements.*/
+    margin-left: 20px;
+}

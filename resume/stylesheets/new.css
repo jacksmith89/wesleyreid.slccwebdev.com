@@ -1,0 +1,33 @@
+.mainHeader {
+    height: 100vh;
+    min-height: 40em;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+h1,
+h2 {
+    font-variant: small-caps;
+}
+
+.navbar-brand img {
+    width: 50px;
+}
+
+.nav-link {
+    border-radius: .3rem;
+}
+
+.nav-link:hover {
+    background-color: rgba(240, 240, 255, .25);
+    box-shadow: rgba(0, 0, 0, 1) 0px 3px 10px, rgba(0, 0, 0, 1) 0px 5px 10px, rgba(0, 0, 0, 1) 0px 5px 10px;
+}
+
+#content {
+    background-size: cover;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}

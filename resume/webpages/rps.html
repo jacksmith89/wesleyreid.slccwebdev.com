@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Rock Paper Scissors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/main.css">
+  <script src="../scripts/switch-css.js"></script>
+</head>
+
+<body>
+  <nav>
+    <ul style="list-style: none; padding-left: 15px;">
+      <li><a href="../resume/index.html">Back to Resume</a></li>
+      <li><a href="../webpages/portfolio.html">Back to Portfolio</a></li>
+      <br>
+      <button onclick="toggleTheme()">Switch CSS</button>
+    </ul>
+  </nav>
+  <header class="outside-box">
+    <div class="inner-box">
+      <img src="../assets/images/rps.jpg" alt="Hands Playing 'Rock, Paper, Scissors'">
+      <h1>Rock, Paper, Scissors</h1>
+    </div>
+  </header>
+  <main class="outside-box">
+    <section class="inner-box">
+      <h2>Let's Play "Rock, Paper, Scissors!"</h2>
+      <label for=choice><input id="choice" placeholder="Make your choice!" list="choices"> <em>Don't worry, I won't
+          peek!</em></label>
+      <datalist id=choices>
+        <option value="Rock" />
+        <option value="Paper" />
+        <option value="Scissors" />
+        <option value="Bomb?" />
+      </datalist>
+      <br>
+      <br>
+      <p>3 . . .</p>
+      <br>
+      <br>
+      <p>2 . . .</p>
+      <br>
+      <br>
+      <p>1 . . .</p>
+      <br>
+      <br>
+      <button class="game-button" onclick="playGame()">Go!</button>
+      <br>
+      <br>
+      <div id="userError"></div>
+      <div id="gameFinal"></div>
+      <br>
+      <br>
+      <button class="game-button" onclick="reset()">Reset</button>
+    </section>
+    <script src="../scripts/rps.js">
+    </script>
+  </main>
+</body>
+
+</html>

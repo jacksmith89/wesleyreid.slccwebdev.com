@@ -1,0 +1,75 @@
+/*Follow the instructions in the comments to complete this practice.*/
+div.scroll {
+    /*1. Add the width property and set the value to "200px".*/
+    width: 200px;
+    /*2. Add the height property and set the value to "100px".*/
+    height: 100px;
+    /*3. Add the overflow property and set the value to "scroll".*/
+    overflow: scroll;
+}
+
+div.hidden {
+    /*1. Add the width property and set the value to "200px".*/
+    width: 200px;
+    /*2. Add the height property and set the value to "100px".*/
+    height: 100px;
+    /*3. Add the overflow property and set the value to "hidden".*/
+    overflow: hidden;
+}
+
+div.hidden-img {
+    /*1. Add the width property and set the value to "200px".*/
+    width: 200px;
+    /*2. Add the height property and set the value to "200px".*/
+    height: 200px;
+    /*3. Add the overflow property and set the value to "hidden".*/
+    overflow: hidden;
+    /*4. Add the border-top-right-radius property and set the value to "50%".*/
+    border-top-right-radius: 50%;
+    /*5. Add the border-top-left-radius property and set the value to "50%".*/
+    border-top-left-radius: 50%;
+    /*6. Add the border-bottom-right-radius property and set the value to "50%".*/
+    border-bottom-right-radius: 50%;
+}
+
+div.auto {
+    /*1. Add the width property and set the value to "200px".*/
+    width: 200px;
+    /*2. Add the height property and set the value to "100px".*/
+    height: 100px;
+    /*3. Add the overflow property and set the value to "auto".*/
+    overflow: auto;
+}
+
+div.visible {
+    /*1. Add the width property and set the value to "200px".*/
+    width: 200px;
+    /*2. Add the height property and set the value to "100px".*/
+    width: 100px;
+    /*3. Add the overflow property and set the value to "visible".*/
+    overflow: visible;
+}
+
+/*Create a CSS rule that selects the <span> element with the class of property assigned.*/
+span {
+    /*Add the color property and set the value to "#f82706".*/
+    color: #f82706;
+}
+
+/*Create a CSS rule that selects the <span> element with the class of value assigned.*/
+span {
+    /*Add the color property and set the value to "#2b18cd".*/
+    color: #2b18cd;
+}
+
+/*Create a CSS rule that selects the <img> element.*/
+img {
+    /*Add the width property and set the value to "220px".*/
+    width: 220px;
+}
+
+/*Create a CSS rule that selects the <div> elements.*/
+div {
+    /*Add the background color property and set the value to "lightblue".*/
+    background-color: lightblue;
+}

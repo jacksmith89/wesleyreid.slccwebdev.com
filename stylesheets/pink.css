@@ -1,0 +1,229 @@
+body {
+    font-family: Candara;
+    background-color: lightpink;
+}
+
+nav {
+    border-radius: 10px 50px;
+    border: solid 5px hotpink;
+    background-color: rgb(82, 22, 22);
+    height: 97%;
+    width: 9.5em;
+    position: fixed;
+    z-index: 1;
+    font-family: 'Dancing Script', cursive;
+    font-variant: small-caps;
+    font-size: 1.5em;
+    overflow-y: auto;
+}
+
+nav ul {
+    list-style: none;
+    padding-left: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: lightgray;
+}
+
+nav a:hover {
+    background-color: black;
+    padding: 0 10px 5px;
+    transform: translate(5px, 0);
+    display: inline-block;
+    border-radius: 50%;
+}
+
+nav button {
+    font-family: Lato, sans-serif;
+    font-size: 1em;
+    border-radius: .5em;
+    border: none;
+    background: center/cover url(../assets/images/night-sky.jpg);
+    color: lightgray;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(240, 240, 255, 1);
+    transition: all .25s;
+}
+
+a:hover {
+    text-decoration: none;
+    color: hotpink;
+}
+
+.outside-box {
+    margin-left: 14.5em;
+    min-width: 300px;
+}
+
+.inner-box {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header div {
+    margin: 0 0 75px;
+    background-color: rgba(240, 240, 255, .25);
+    border-radius: 10px;
+    padding: 5px 10px;
+    box-shadow: rgba(0, 0, 0, 1) 0px 3px 10px, rgba(0, 0, 0, 1) 0px 5px 10px, rgba(0, 0, 0, 1) 0px 5px 10px;
+    align-items: center;
+    transition: background-color .25s;
+}
+
+header h1 {
+    letter-spacing: 0.2em;
+    color: rgba(240, 240, 255, 1);
+    font-size: 2.5em;
+    display: inline-block;
+    vertical-align: top;
+    margin: 100px 0px 15px 10px;
+}
+
+header img {
+    margin-top: 10px;
+    height: 12em;
+    /* outline: solid;
+    outline-width: 5px;
+    outline-color: midnightblue; */
+    border: solid;
+    border-width: 5px;
+    border-color: white;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+h1,
+h2 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-variant: small-caps;
+}
+
+section {
+    background-color: rgba(240, 240, 255, .75);
+    border-radius: 10px;
+    margin: 50px auto;
+    padding: 5px 10px;
+    box-shadow: rgba(0, 0, 0, 1) 0px 3px 10px, rgba(0, 0, 0, 1) 0px 5px 10px;
+    transition: box-shadow .25s, transform .25s;
+}
+
+section:hover {
+    box-shadow: rgba(0, 0, 0, 1) 5px 8px 10px, rgba(0, 0, 0, 1) 0px 3px 10px, rgba(0, 0, 0, 1) 5px 8px 10px, rgba(0, 0, 0, 1) 0px 3px 10px, rgba(0, 0, 0, 1) 5px 8px 10px, rgba(0, 0, 0, 1) 5px 8px 10px;
+    transform: translate(-5px, -5px);
+}
+
+section h2 {
+    background-color: palevioletred;
+    width: 15em;
+    margin-left: -5px;
+    padding-left: 5px;
+    border: solid;
+    border-radius: 10px;
+    font-size: 28px;
+    letter-spacing: 0.1em;
+}
+
+section li {
+    list-style: none;
+    margin: 0em 1em .5em -1em;
+}
+
+/* p.indent {
+    margin: .5em 2em;
+  } */
+
+/* For Portfolio page? */
+div.banner {
+    /* margin-right: 100px; */
+    display: inline-block;
+    width: 17.5em;
+    height: 17.5em;
+    margin: 15px;
+    background-color: rgba(240, 240, 255, .25);
+    border-radius: 10px;
+    padding: 5px 10px 5px 5px;
+    box-shadow: rgba(0, 0, 0, 1) 0px 3px 10px, rgba(0, 0, 0, 1) 0px 5px 10px, rgba(0, 0, 0, 1) 0px 5px 10px;
+    transition: background-color .5s;
+}
+
+div.banner:hover {
+    background-color: rgba(0, 0, 0, .75);
+}
+
+.banner img {
+    margin: 15px auto;
+    height: 10em;
+    outline: solid;
+    outline-width: 5px;
+    outline-color: midnightblue;
+    border: solid;
+    border-width: 5px;
+    border-color: white;
+    border-radius: 50%;
+    display: block;
+}
+
+.banner h2 {
+    text-align: center;
+    font-size: 2em;
+}
+
+.game-button {
+    display: block;
+    padding: 0.3em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 300;
+    color: #FFFFFF;
+    background-color: #4eb5f1;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.game-button:hover {
+    background-color: #4095c6;
+}
+
+.big-first-word {
+    font-size: 24px;
+    font-weight: 700;
+    font-variant: small-caps;
+}
+
+thead {
+    background-color: palevioletred;
+}
+
+th {
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+td {
+    width: 25%;
+    min-width: min-content;
+    /* border: 1px solid #ccc; */
+    padding: 5px;
+    min-width: 150px;
+    /* border-width border-style border-color */
+    text-align: center;
+}
+
+.secret-footer {
+    /* position: fixed; */
+    /* right: 10%; */
+    bottom: 0;
+    /* width: 5%; */
+    color: rgba(255, 0, 0, 0);
+    text-align: right;
+}

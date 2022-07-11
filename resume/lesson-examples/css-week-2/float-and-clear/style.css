@@ -1,0 +1,87 @@
+/*Follow the instructions in the comments below to complete this practice.*/
+* {
+    /*1. Add the box-sizing property and set the value to "border-box".*/
+    box-sizing: border-box;
+}
+
+.header,
+.footer {
+    /*1. Add the background-color property and set the value to "grey".*/
+    background-color: grey;
+    /*2. Add the color property and set the value to "white".*/
+    color: white;
+    /*3. Add the padding property and set the value to "15px".*/
+    padding: 15px;
+}
+
+.column {
+    /*1. Add the float property and set the value to "left".*/
+    float: left;
+    /*2. Add the padding property and set the value to "15px".*/
+    padding: 15px;
+}
+
+.clearfix::after {
+    /*1. Add the content property and set the value to two quotation marks("").*/
+    content: "";
+    /*2. Add the clear property and set the value to "both".*/
+    clear: both;
+    /*3. Add the display property and set the value to "table".*/
+    display: table;
+}
+
+.menu {
+    /*1. Add the width property and set the value to "25%".*/
+    width: 25%;
+}
+
+.content {
+    /*1. Add the width property and set the value to "75%".*/
+    width: 75%;
+}
+
+.menu ul {
+    /*1. Add the list-style-type property and set the value to "none".*/
+    list-style-type: none;
+    /*2. Add the margin property and set the value to "0".*/
+    margin: 0;
+    /*3. Add the padding property and set the value to "0".*/
+    padding: 0;
+}
+
+.menu li {
+    /*1. Add the padding property and set the value to "8px".*/
+    padding: 8px;
+    /*2. Add the margin-bottom property and set the value to "8px".*/
+    margin-bottom: 8px;
+    /*3. Add the background-color property and set the value to "#33b5e5".*/
+    background-color: #33b5e5;
+    /*4. Add the color property and set the value to "#ffffff".*/
+    color: #ffffff;
+}
+
+.menu li:hover {
+    /*1. Add the background-color property and set the value to "#0099cc".*/
+    background-color: #0099cc;
+}
+
+.menu li:active {
+    /*1. Add the background-color property and set the value to "#83b5c6".*/
+    background-color: #83b5c6;
+}
+
+img {
+    /*1. Add the float property and set the value to "right".*/
+    float: right;
+    /*2. Add the height property and set the value to "200px".*/
+    height: 200px;
+    /*3. Add the margin property and set the value to "20px".*/
+    margin: 20px;
+}
+
+#history,
+#tour,
+#food {
+    /*1. Add the display property and set the value to "none".*/
+    display: none;
+}

@@ -1,0 +1,47 @@
+/*Follow the instructions in the comments below to complete this practice.*/
+h1 {
+    /*1. Add the text-align property and set the value to "center".*/
+    text-align: center;
+}
+
+div.centered {
+    /*1. Add the width property and set the value to "50%".*/
+    width: 50%;
+    /*2. Add the padding property and set the value to "20px".*/
+    padding: 20px;
+    /*3. Add the margin property and set the value to "auto".*/
+    margin: auto;
+    /*4. Add the background-color property and set the value to "lightblue".*/
+    background-color: lightblue;
+}
+
+img {
+    /*1. Add the width property and set the value to "50%".*/
+    width: 50%;
+    /*2. Add the display property and set the value to "block".*/
+    display: block;
+    /*3. Add the margin property and set the value to "auto".*/
+    margin: auto;
+}
+
+p.labelCenter {
+    /*1. Add the margin property and set the value to "0".*/
+    margin: 0;
+    /*2. Add the position property and set the value to "absolute".*/
+    position: absolute;
+    /*3. Add the top property and set the value to "50%".*/
+    top: 50%;
+    /*4. Add the left property and set the value to "50%".*/
+    left: 50%;
+    /*5. Add the transform property and set the value to "translate(-50%, -50%)".*/
+    transform: translate(-50%, -50%);
+    /*6. Add the background-color property and set the value to "rgba(255, 255, 255, 0.6)".*/
+    background-color: rgba(255, 255, 255, 0.6);
+    /*7. Add the padding property and set the value to "20px".*/
+    padding: 20px
+}
+
+.text-rt {
+    /*1. Add the text-align property and set the value to "right".*/
+    text-align: right;
+}

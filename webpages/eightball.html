@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Magic Eight Ball</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/main.css">
+  <script src="../scripts/switch-css.js"></script>
+</head>
+
+<body>
+  <nav>
+    <ul style="list-style: none; padding-left: 15px;">
+      <li><a href="../resume/index.html">Back to Resume</a></li>
+      <li><a href="../webpages/portfolio.html">Back to Portfolio</a></li>
+      <br>
+      <button onclick="toggleTheme()">Switch CSS</button>
+    </ul>
+  </nav>
+  <header class="outside-box">
+    <div class="inner-box">
+      <img src="../assets/images/magic8.jpg" alt="Magic Eight Ball">
+      <h1>Magic Eight Ball</h1>
+    </div>
+  </header>
+  <main class="outside-box">
+    <section class="inner-box">
+      <br>
+      <label for="name">What's Your Name? <input id="name" placeholder="Name" type=text></label>
+      <br>
+      <br>
+      <div id="greeting"></div>
+      <br>
+      <label for="question">What Do You Want To Know? <input id="question" placeholder="Question" type=text></label>
+      <br>
+      <br>
+      <button class="game-button" onclick="askQuestion()">Ask!</button>
+      <br>
+      <br>
+      <div id="questionFull"></div>
+      <br>
+      <div id="final"></div>
+      <br>
+      <br>
+      <button class="game-button" onclick="window.location.reload()">Reset</button>
+    </section>
+    <script src="../scripts/eightball.js">
+    </script>
+  </main>
+</body>
+
+</html>

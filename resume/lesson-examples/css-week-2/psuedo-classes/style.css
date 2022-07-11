@@ -1,0 +1,20 @@
+/*Follow the instructions in the comments below to complete this practice*/
+a:link {
+    /*Add the color property and set the value to "red"*/
+    color: red;
+}
+
+a:visited {
+    /*Add the color property and set the value to "orange"*/
+    color: orange;
+}
+
+a:hover {
+    /*Add the color property and set the value to "purple"*/
+    color: purple;
+}
+
+a:active {
+    /*Add the color property and set the value to "pink"*/
+    color: pink;
+}

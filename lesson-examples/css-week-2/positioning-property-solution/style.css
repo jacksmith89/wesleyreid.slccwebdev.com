@@ -1,0 +1,89 @@
+/*Follow the instructions in the comments below to complete this practice*/
+.static {
+    /*1. Add the position property and set the value to "static".*/
+    position: static;
+    /*2. Add the width property and set the value to "300px".*/
+    width: 300px;
+    /*3. Add the padding property and set the value to "10px".*/
+    padding: 10px;
+    /*4. Add the border property and set the value to "2px solid darkcyan".*/
+    border: 2px solid darkcyan;
+}
+
+.relative {
+    /*1. Add the position property and set the value to "relative".*/
+    position: relative;
+    /*2. Add the width property and set the value to "300px".*/
+    width: 300px;
+    /*3. Add the padding property and set the value to "10px".*/
+    padding: 10px;
+    /*4. Add the left property and set the value to "40px".*/
+    left: 40px;
+    /*5. Add the top property and set the value to "-30px".*/
+    top: -30px;
+    /*6. Add the border property and set the value to "2px solid lawngreen".*/
+    border: 2px solid lawngreen;
+    /*7. Add the background color property and set the value to "rgb(184, 213, 241)".*/
+    background-color: rgb(184, 213, 241);
+}
+
+.fixed {
+    /*1. Add the position property and set the value to "fixed".*/
+    position: fixed;
+    /*2. Add the width property and set the value to "300px".*/
+    width: 300px;
+    /*3. Add the padding property and set the value to "10px".*/
+    padding: 10px;
+    /*4. Add the right property and set the value to "0px".*/
+    right: 0px;
+    /*5. Add the bottom property and set the value to "0px".*/
+    bottom: 0px;
+    /*6. Add the border property and set the value to "2px solid steelblue".*/
+    border: 2px solid steelblue;
+    /*7. Add the background color property and set the value to "darkgrey".*/
+    background-color: darkgrey;
+}
+
+.absolute {
+    /*1. Add the position property and set the value to "absolute".*/
+    position: absolute;
+    /*2. Add the width property and set the value to "300px".*/
+    width: 300px;
+    /*3. Add the padding property and set the value to "10px".*/
+    padding: 10px;
+    /*4. Add the top property and set the value to "1000px".*/
+    top: 1000px;
+    /*5. Add the right property and set the value to "50px".*/
+    right: 50px;
+    /*6. Add the border property and set the value to "2px solid #73ad21".*/
+    border: 2px solid #73ad21;
+    /*7. Add the background color property and set the value to "lightskyblue".*/
+    background-color: lightskyblue;
+}
+
+.sticky {
+    /*1. Add the position property and set the value to "-webkit-sticky".*/
+    /* position: -webkit-sticky; */
+    /*2. Add the position property and set the value to "sticky".*/
+    position: sticky;
+    /*3. Add the width property and set the value to "300px".*/
+    width: 300px;
+    /*3. Add the padding property and set the value to "10px".*/
+    padding: 10px;
+    /*5. Add the top property and set the value to "0px".*/
+    top: 10px;
+    /*6. Add the left property and set the value to "50px".*/
+    left: 50px;
+    /*7. Add the border property and set the value to "2px solid #4caf50".*/
+    border: 2px solid #4caf50;
+    /*8. Add the background color property and set the value to "#cae8cada".*/
+    background-color: #cae8cada;
+}
+
+/*Add a CSS rule that selects the <pre> elements.*/
+pre {
+    /*1. Add the font family property and set the value to "serif".*/
+    font-family: serif;
+    /*1. Add the "white-space" property and set the value to "pre-line". This will allow the text to wrap in the browser window.*/
+    white-space: pre-line;
+}
