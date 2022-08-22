@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>PHP Exercises</title>
+    <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,20 +13,21 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <h1 class="display-1 text-bg-primary text-center my-3 rounded-3">PHP Exercises</h1>
-        <!-- Breadcrumb -->
-        <nav class="breadcrumb">
-            <a class="breadcrumb-item" href="../index.php">Main</a>
-            <span class="breadcrumb-item active" aria-current="page">Active</span>
-        </nav>
-        <!-- Pages -->
-        <div class="list-group col-sm-4">
-            <a href="./php-practice/php-tags-1.php" class="list-group-item list-group-item-action">PHP Tags</a>
-            <a href="./php-practice/week2.php" class="list-group-item list-group-item-action">Week 2</a>
-            <a href="./php-practice/form.php" class="list-group-item list-group-item-action">Week 3</a>
-        </div>
-    </div>
+    <!-- Add PHP tags and create an echo statement that writes "Hello World!" to the screen -->
+    <nav class="breadcrumb">
+        <a class="breadcrumb-item" href="../../index.php">Main</a>
+        <a class="breadcrumb-item" href="../myPHPactivities.php">PHP Exercises</a>
+        <span class="breadcrumb-item active" aria-current="page">Active</span>
+    </nav>
+    <?php
+    echo "Hello World!";
+    $test = "<br> Testing one, two, testing one, two.";
+    echo $test;
+    $numOne = 5;
+    $numTwo = 7;
+    echo "<br>The sum of " . $numOne . " and " . $numTwo . " is " . ($numOne + $numTwo) . "!";
+    echo "<br>The product of " . $numOne . " and " . $numTwo . " is " . ($numOne * $numTwo) . "!";
+    ?>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 

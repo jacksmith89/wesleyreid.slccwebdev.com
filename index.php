@@ -33,7 +33,7 @@
                 <a class="nav-link fs-5" href="./webpages/skills.php">Skills</a>
                 <a class="nav-link fs-5" href="./webpages/portfolio-2.php">Portfolio</a>
                 <a class="nav-link fs-5" href="./webpages/contact.php">Contact</a>
-                <a class="nav-link fs-5" href="./webpages/myPHPactivities.php">PHP Exercises Week 2</a>
+                <a class="nav-link fs-5" href="./webpages/myPHPactivities.php">PHP Exercises</a>
             </div>
         </div>
     </nav>

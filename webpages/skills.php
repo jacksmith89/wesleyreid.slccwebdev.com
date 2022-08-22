@@ -1,3 +1,4 @@
+<?php include "../scripts/skillList.php" ?>
 <!doctype html>
 <html lang="en">
 
@@ -7,8 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../stylesheets/new.css">
 
     <title>Skills</title>
@@ -19,8 +19,7 @@
 
     <!-- Navbar Button -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="#">
@@ -41,8 +40,7 @@
 
     <header class="mainHeader" style="background-image: url(../assets/images/laptop.jpg);">
         <div class="container-fluid h-100">
-            <div class="row h-100 align-items-center justify-content-center text-center text-white"
-                style="background-color: rgba(0,0,0,0.2);">
+            <div class="row h-100 align-items-center justify-content-center text-center text-white" style="background-color: rgba(0,0,0,0.2);">
                 <div class="col-lg-8">
                     <h1 class="display-1 fw-bold">Skills</h1>
                     <hr class="bg-white my-5" />
@@ -83,8 +81,11 @@
                         <div class="card-body">
                             <h3 class="card-title">Technical Skills</h3>
                             <hr class="bg-primary">
-                            <p class="card-text">Basic web design--HTML/CSS/JS, Basic competency with word processing,
-                                spreadsheets, and Google Fu, flesh this out more.</p>
+                            <p class="card-text">
+                                <!-- Jul 11, 2022 17:46:52 previous plain text: Basic web design--HTML/CSS/JS, Basic competency with word processing,
+                                spreadsheets, and Google Fu, flesh this out more. -->
+                                <?php mySkills($mySkillsList, $favSkill); ?>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -131,15 +132,9 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 

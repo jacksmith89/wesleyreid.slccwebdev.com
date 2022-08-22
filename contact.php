@@ -1,114 +1,3 @@
-<?php
-if (!isset($_SESSION)) {
-    session_start();
-}
-// Jul 14, 2022 09:45:37 Not a fan of this syntax, but it does save space.
-$name = $email = $contBack = $comment = "";
-$nameErr = $emailErr = $contBackErr = "";
-$formErr = false;
-
-// Jul 15, 2022 09:28:00 if block to clean and validate each form input, and set error messages if there's a problem. Again, using ($_SERVER["REQUEST_METHOD"] == "POST" checks whether the request method is POST or not.) First, we need to check if there's anything in input field (for $name and $email), and give an error if not; if there's something in the field, we run cleanInput on it, then validate it.
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_POST["name"])) {
-        $nameErr = "Name is required.";
-        $formErr = true;
-    }
-    $name = cleanInput($_POST["name"]);
-    // Jul 15, 2022 09:45:26 Use RegEx (pregmatch) to validate the name
-    if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
-        $nameErr = "Only letters and standard spaces allowed";
-        $formErr = true;
-    }
-    if (empty($_POST["email"])) {
-        $emailErr = "Email is required.";
-        $formErr = true;
-    }
-    $email = cleanInput($_POST["email"]);
-    // Jul 15, 2022 09:45:26 Use RegEx (pregmatch) to validate the name
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $emailErr = "Please enter a valid email address.";
-        $formErr = true;
-    }
-
-    if (empty($_POST["contact-back"])) {
-        $contBackErr = "Please let us know if we can contact you back.";
-        $formErr = true;
-    } else {
-        $contBack = cleanInput($_POST["contact-back"]);
-    }
-
-    $comment = cleanInput($_POST["comments"]);
-}
-
-function cleanInput($data)
-{
-    $data = stripslashes($data);
-    $data = trim($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-
-function mirrorFormInput($data)
-{
-    if (isset($data)) {
-        echo $data;
-    }
-}
-if (($_SERVER['REQUEST_METHOD'] == "POST") && (!($formErr))) {
-    // $hostname = "php-mysql-exercisedb.slccwebdev.com";
-    // $username = "phpmysqlexercise";
-    // $password = "mysqlexercise";
-    // $databasename = "php_mysql_exercisedb";
-    $hostname = "sql764.main-hosting.eu";
-    $username = "wrdev";
-    $password = "GetFuckedwrdevdb1";
-    $databasename = "u392692532_wrdevdb1";
-
-    try {
-        //Create new PDO Object with connection parameters
-        $conn = new PDO("mysql:host=$hostname;dbname=$databasename", $username, $password);
-
-        //Set PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        //Variable containing SQL command
-        $sql = "INSERT INTO wr_fa22_Contacts (name, email, contactBack, comments)
-        VALUES (:name, :email, :contactBack, :comments);";
-
-        //Create prepared statement
-        $stmt = $conn->prepare($sql);
-
-        //Bind parameters to variables
-        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-        $stmt->bindParam(':contactBack', $contBack, PDO::PARAM_STR);
-        $stmt->bindParam(':comments', $comment, PDO::PARAM_STR);
-
-        //Execute SQL statement on server
-        $stmt->execute();
-
-        //Create thank-you message
-        $_SESSION['message'] = '<p class="font-weight-light">Your request has been sent.</p>';
-
-        $_SESSION['complete'] = true;
-
-        //Redirect
-        header('Location: ' . $_SERVER['REQUEST_URI']);
-        exit;
-    } catch (PDOException $error) {
-        //Return error code if one is created
-        $_SESSION['message'] = '<p>We apologize, the form was not submitted successfully. Please try again later.</p>';
-
-        $_SESSION['complete'] = false;
-
-        //Redirect
-        header('Location: ' . $_SERVER['REQUEST_URI']);
-        exit;
-    }
-    $conn = null;
-}
-?>
-
 <!doctype html>
 <html lang="en">
 
@@ -117,16 +6,10 @@ if (($_SERVER['REQUEST_METHOD'] == "POST") && (!($formErr))) {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="../stylesheets/new.css">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 </head>
 
@@ -178,7 +61,7 @@ if (($_SERVER['REQUEST_METHOD'] == "POST") && (!($formErr))) {
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table class="table text-center fs-4">
+                        <table class="table text-center fs-5">
                             <thead>
                                 <tr>
                                     <th scope="col">Name</th>
@@ -220,7 +103,59 @@ if (($_SERVER['REQUEST_METHOD'] == "POST") && (!($formErr))) {
     </section>
 
     <!-- Contact Form -->
+    <?php $name = $email = $contBack = $comment = "";
+    $nameErr = $emailErr = $contBackErr = "";
+    $formErr = false;
 
+    // Jul 15, 2022 09:28:00 if block to clean and validate each form input, and set error messages if there's a problem. Again, using ($_SERVER["REQUEST_METHOD"] == "POST" checks whether the request method is POST or not.) First, we need to check if there's anything in input field (for $name and $email), and give an error if not; if there's something in the field, we run cleanInput on it, then validate it.
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST["name"])) {
+            $nameErr = "Name is required.";
+            $formErr = true;
+        }
+        $name = cleanInput($_POST["name"]);
+        // Jul 15, 2022 09:45:26 Use RegEx (pregmatch) to validate the name
+        if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+            $nameErr = "Only letters and standard spaces allowed";
+            $formErr = true;
+        }
+        if (empty($_POST["email"])) {
+            $emailErr = "Email is required.";
+            $formErr = true;
+        }
+        $email = cleanInput($_POST["email"]);
+        // Jul 15, 2022 09:45:26 Use RegEx (pregmatch) to validate the name
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $nameErr = "Only letters and standard spaces allowed";
+            $formErr = true;
+        }
+
+        if (empty($_POST["contact-back"])) {
+            $contBackErr = "Please let us know if we can contact you back.";
+            $formErr = true;
+        } else {
+            $contBack = cleanInput($_POST["contact-back"]);
+        }
+
+        $comment = cleanInput($_POST["comments"]);
+    }
+
+    function cleanInput($data)
+    {
+        $data = stripslashes($data);
+        $data = trim($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+    function mirrorFormInput($data)
+    {
+        if (isset($data)) {
+            echo $data;
+        }
+    }
+
+    ?>
     <section id="contact" style="background-image: url(../assets/images/contact.jpg);">
         <div class="container-fluid py-5 text-white vh-100">
             <div class="row justify-content-center text-center">
@@ -243,7 +178,7 @@ if (($_SERVER['REQUEST_METHOD'] == "POST") && (!($formErr))) {
                             <div class="form-group">
                                 <label for="email">Email Address:</label>
                                 <span class="text-warning">*<?php echo $emailErr; ?></span>
-                                <input type="email" id="email" placeholder="name@example.com" name="email" class="form-control" value="<?php mirrorFormInput($email); ?>">
+                                <input type="email" id="email" placeholder="name@example.com" name="email" class="form-control" value="<?php mirrorFormInput($name); ?>">
                             </div>
                             <!-- Contact Back -->
                             <div class="form-group">
@@ -279,61 +214,34 @@ if (($_SERVER['REQUEST_METHOD'] == "POST") && (!($formErr))) {
                 </div>
             </div>
         </div>
-        <!-- Thank You Modal -->
-        <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="thankYouModalLabel">Thank You For Your Submission!</h5>
-                        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button> -->
-                    </div>
-                    <div class="modal-body">
-                        <?php echo $_SESSION['message']; ?>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Error Modal -->
-        <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="errorModalLabel">Something Went Wrong!</h5>
-                        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button> -->
-                    </div>
-                    <div class="modal-body">
-                        <?php echo $_SESSION['message']; ?>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
-    <!-- Show Error Modal -->
-    <?php
-    if (isset($_SESSION['complete']) && !$_SESSION['complete']) {
-        echo "<script>$('#errorModal').modal('show');</script>";
-        session_unset();
-    }
-    ?>
-    <!-- Show Thank You Modal -->
-    <?php
-    if (isset($_SESSION['complete']) && $_SESSION['complete']) {
-        echo "<script>$('#thankYouModal').modal('show');</script>";
-        session_unset();
-    }
-    ?>
-
-
+    <?php if (($_SERVER['REQUEST_METHOD'] == "POST") && (!($formErr))) { ?>
+        <section id="results">
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <h1>Form Entries:</h1>
+                <ul>
+                    <?php
+                    // Jul 14, 2022 14:14:39 I did this the lazy way, by just checking if the variable is "truthy". The more correct way would probably be to use:
+                    // if ($name !== "") {}
+                    // to just check whether the variable is exactly an empty string or not.
+                    if ($name) {
+                        echo "<li>Name: $name </li>";
+                    }
+                    if ($email) {
+                        echo "<li>Email: $email </li>";
+                    }
+                    if ($contBack) {
+                        echo "<li>Contact Back: $contBack </li>";
+                    }
+                    if ($comment) {
+                        echo "<li>Comment: $comment </li>";
+                    }
+                    ?>
+                </ul>
+            </div>
+        </section>
+    <?php } ?>
 
     <!-- Footer -->
     <footer class="py-4 bg-dark">
@@ -381,7 +289,10 @@ if (($_SERVER['REQUEST_METHOD'] == "POST") && (!($formErr))) {
         }
     </script> -->
 
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 </body>
 
 </html>
