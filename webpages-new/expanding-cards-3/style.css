@@ -9,9 +9,9 @@ body {
     opacity: 0;
     transition: opacity 2s;
     font-family: "Mulish", sans-serif;
-    display: flex;
+    /* display: flex; */
     /* align-items: center; */
-    justify-content: center;
+    /* justify-content: center; */
     height: 100vh;
     margin: 0;
 }
@@ -27,18 +27,9 @@ body {
     background-attachment: scroll;
     color: white;
     flex: .5;
-    position: relative;
+    /* position: relative; */
     transition: flex 0.7s ease-in;
-}
-
-.panel.btn-close {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-}
-
-.panel div {
-    display: none;
+    position: relative;
 }
 
 .info-bg {
@@ -46,22 +37,21 @@ body {
     border-radius: .5em;
 }
 
-.panel h3 {
-    margin: 0;
+.panel span {
+    font-size: 24px;
     /* opacity: 0; */
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
+    width: 50%;
     margin: 0 auto;
     padding: 20px;
-    width: 50%;
     cursor: pointer;
 }
 
-.panel.active h3 {
+.active span {
     display: none;
 }
 
 .panel.active div {
     flex: 5;
-    display: inline-block;
 }
