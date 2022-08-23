@@ -11,6 +11,7 @@ panels.forEach((panel) => {
 closeBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
         removeActiveClasses();
+        event.stopImmediatePropagation()
     })
 })
 
